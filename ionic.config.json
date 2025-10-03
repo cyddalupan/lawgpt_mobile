@@ -1,0 +1,7 @@
+{
+  "name": "lawgpt",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
