@@ -8,7 +8,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const openInAppBrowser = () => {
-      const browser = InAppBrowser.create('https://topbarassist.reviewcenterphil.com/page/lawgpt');
+      const browser = InAppBrowser.create('https://topbarassist.reviewcenterphil.com/page/lawgpt', '_self', 'location=no');
       browser.show();
     };
 

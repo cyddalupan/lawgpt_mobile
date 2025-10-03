@@ -2,6 +2,9 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
+import Offline from './pages/Offline/Offline';
+import { Network } from '@capacitor/network';
+import { useState, useEffect } from 'react';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -35,19 +38,46 @@ import './theme/variables.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+const App: React.FC = () => {
+  const [networkStatus, setNetworkStatus] = useState({ connected: true, connectionType: 'wifi' });
+
+  useEffect(() => {
+    const logCurrentNetworkStatus = async () => {
+      const status = await Network.getStatus();
+      setNetworkStatus(status);
+    };
+
+    Network.addListener('networkStatusChange', status => {
+      setNetworkStatus(status);
+    });
+
+    logCurrentNetworkStatus();
+
+    return () => {
+      Network.removeAllListeners();
+    };
+  }, []);
+
+  return (
+    <IonApp>
+      <IonReactRouter>
+        <IonRouterOutlet>
+          {networkStatus.connected ? (
+            <Route exact path="/home">
+              <Home />
+            </Route>
+          ) : (
+            <Route exact path="/offline">
+              <Offline />
+            </Route>
+          )}
+          <Route exact path="/">
+            <Redirect to={networkStatus.connected ? "/home" : "/offline"} />
+          </Route>
+        </IonRouterOutlet>
+      </IonReactRouter>
+    </IonApp>
+  );
+};
 
 export default App;
