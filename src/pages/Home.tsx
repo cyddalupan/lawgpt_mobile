@@ -1,29 +1,17 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser';
-import { useEffect } from 'react';
-import ExploreContainer from '../components/ExploreContainer';
+import { IonContent, IonPage } from '@ionic/react';
 import './Home.css';
 
 const Home: React.FC = () => {
-
-  useEffect(() => {
-    const openInAppBrowser = () => {
-      const browser = InAppBrowser.create('https://topbarassist.reviewcenterphil.com/page/lawgpt', '_self', 'location=no');
-      browser.show();
-    };
-
-    openInAppBrowser();
-  }, []);
+  const siteUrl = 'https://topbarassist.reviewcenterphil.com/page/lawgpt';
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Blank</IonTitle>
-        </IonToolbar>
-      </IonHeader>
       <IonContent fullscreen>
-
+        <iframe
+          src={siteUrl}
+          style={{ width: '100%', height: '100%', border: 'none' }}
+          title="LawGPT"
+        />
       </IonContent>
     </IonPage>
   );

@@ -14,7 +14,7 @@ const Offline: React.FC = () => {
           <h1>Connection Lost</h1>
           <p>Please check your internet connection and try again.</p>
           <div className="placeholder">
-            {/* Placeholder for SVG graphic */}
+            <img src="/assets/offline-graphic.png" alt="Connection Lost" />
           </div>
         </div>
       </IonContent>
