@@ -30,11 +30,13 @@
     - [x] **Place Offline Graphic:** Move the `offline-graphic.png` into the `public/assets/` directory and update the `<img>` tag in `src/pages/Offline/Offline.tsx` to point to it.
 
 - [ ] **Phase 3: Final Testing & Building**
-    - [ ] **Web App Testing:** Start the local development server with `ionic serve` and perform a final manual test to ensure all features (web view, offline page) work as expected in the browser.
-    - [ ] **Sync Web Assets:** Run `ionic cap sync` to copy the final web build and configuration into the native Android and iOS projects.
-    - [ ] **Build Android App (APK):** Run the command `ionic cap build android` to produce a production-ready APK file.
+    - [x] **Web App Testing:** Start the local development server with `ionic serve` and perform a final manual test to ensure all features (web view, offline page) work as expected in the browser.
+    - [x] **Sync Web Assets:** Run `ionic cap sync` to copy the final web build and configuration into the native Android and iOS projects.
+    - [x] **Build Android App (APK):** Run the command `ionic cap build android` to produce a production-ready APK file.
     - [ ] **Build iOS App (IPA):** Open the iOS project in Xcode (`ionic cap open ios`), then use Xcode's "Archive" feature to build the app and prepare it for distribution.
 
+      > This task is blocked because it requires Xcode, which is not available in the current CLI environment.
+
 - [ ] **Phase 4: Documentation**
-    - [ ] **Update README:** Edit `README.md` to include the final instructions for building the project and running it on the web.
-    - [ ] **Create GEMINI.md:** Create a new `GEMINI.md` file to document the development plan, key decisions, and the collaboration process we've followed.
+    - [x] **Update README:** Edit `README.md` to include the final instructions for building the project and running it on the web.
+    - [x] **Create GEMINI.md:** Create a new `GEMINI.md` file to document the development plan, key decisions, and the collaboration process we've followed.
