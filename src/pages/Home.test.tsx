@@ -13,6 +13,6 @@ jest.mock('@awesome-cordova-plugins/in-app-browser', () => ({
 describe('Home', () => {
   it('should open the In-App Browser with the correct URL', () => {
     render(<Home />);
-    expect(InAppBrowser.create).toHaveBeenCalledWith('https://topbarassist.reviewcenterphil.com/page/lawgpt');
+    expect(InAppBrowser.create).toHaveBeenCalledWith('https://topbarassist-agpl.reviewcenterphil.com/page/lawgpt');
   });
 });

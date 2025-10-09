@@ -1,6 +1,6 @@
 # LawGPT Mobile
 
-This is a hybrid mobile application for both Android and iOS named "LawGPT". The app's primary function is to act as a wrapper, displaying the website located at `https://topbarassist.reviewcenterphil.com/page/lawgpt` in a seamless, native-like web view.
+This is a hybrid mobile application for both Android and iOS named "LawGPT". The app's primary function is to act as a wrapper, displaying the website located at `https://topbarassist-agpl.reviewcenterphil.com/page/lawgpt` in a seamless, native-like web view.
 
 ## Getting Started
 
