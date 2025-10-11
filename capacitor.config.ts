@@ -4,7 +4,19 @@ const config: CapacitorConfig = {
   appId: 'com.lawgpt.app',
   appName: 'LawGPT',
   webDir: 'dist',
-  appVersion: '1.0.0'
+  appVersion: '1.0.1',
+  plugins: {
+    SplashScreen: {
+      launchShowDuration: 2000,
+      launchAutoHide: true,
+      backgroundColor: '#ffffff',
+      androidSplashResourceName: 'splash',
+      androidScaleType: 'CENTER_CROP',
+      showSpinner: false,
+      splashFullScreen: true,
+      splashImmersive: true,
+    },
+  }
 };
 
 export default config;
