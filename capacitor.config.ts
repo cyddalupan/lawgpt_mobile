@@ -1,7 +1,7 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.lawgpt.app',
+  appId: 'website.cydd.website.cydd.app',
   appName: 'LawGPT',
   webDir: 'dist',
   appVersion: '1.0.1',
