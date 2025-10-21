@@ -2,7 +2,7 @@ import { IonContent, IonPage } from '@ionic/react';
 import { useEffect, useRef, useState } from 'react';
 import ConsoleLog from '../components/ConsoleLog';
 import './Home.css';
-import { Device } from '@capacitor/device';
+import { Device, DeviceId } from '@capacitor/device';
 
 const Home: React.FC = () => {
   const siteUrl = 'https://topbarassist-agpl.reviewcenterphil.com/';
@@ -16,9 +16,9 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const getDeviceId = async () => {
-      const deviceId = await Device.getId();
+      const deviceId: DeviceId = await Device.getId();
       const url = new URL(siteUrl);
-      url.searchParams.append('device_id', deviceId.uuid);
+      url.searchParams.append('device_id', deviceId.identifier);
       setIframeUrl(url.toString());
     };
 

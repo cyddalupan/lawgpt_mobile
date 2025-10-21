@@ -42,11 +42,3 @@ cd android
 ```
 
 This will generate the APK file in the `android/app/build/outputs/apk/debug` directory.
-
-## Building the iOS App (IPA)
-
-Building the iOS application requires Xcode, which is not available in the current CLI environment. Therefore, this step cannot be completed automatically. The project needs to be opened in Xcode on a macOS machine to be built and archived for distribution.
-
-```bash
-ionic cap open ios
-```
