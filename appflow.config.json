@@ -3,8 +3,7 @@
     {
       "appId": "7c9e3ee6",
       "iosPath": "ios/App",
-      "dependencyInstallCommand": "npm install",
-      "webBuildCommand": "npm run build && npx cap sync ios"
+      "dependencyInstallCommand": "npm install && npm run build && npx cap sync ios"
     }
   ]
 }
